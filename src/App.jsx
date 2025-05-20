@@ -1,14 +1,18 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import AllArticles from './components/AllArticles'
+import SpecificArticle from './components/SpecificArticle'
 
 function App() {
 
 
   return (
-    <>
-<AllArticles/>
-    </>
+    <div>
+
+{<AllArticles/>}
+{<SpecificArticle/>}
+
+  </div>
   )
 }
 
