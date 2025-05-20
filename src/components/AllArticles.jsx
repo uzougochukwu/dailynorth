@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import fetchAllArticles from '../GetAllArticlesApi'
 
+
 function AllArticles() {
+
 const [articles, setArticles] = useState([])
 
 useEffect(() => {
@@ -14,6 +16,7 @@ useEffect(() => {
 }, [])
 
   return (
+    
     <div>A List of all our articles: {articles.map((article) => {
 
         

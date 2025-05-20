@@ -1,15 +1,21 @@
-import { useState } from 'react'
+import { React } from 'react'
+import { NavLink } from "react-router"
+import { Routes, Route } from "react-router-dom";
+
+import Navbar from './components/Navbar'
 import './App.css'
 import AllArticles from './components/AllArticles'
 
 function App() {
 
-
   return (
+    <div>
     <>
-<AllArticles/>
+    <AllArticles/>
     </>
+    </div>
   )
+
 }
 
 export default App
