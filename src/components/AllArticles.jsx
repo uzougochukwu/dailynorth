@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import fetchAllArticles from '../GetAllArticlesApi'
+import fetchAllArticles from '../API'
 
 function AllArticles() {
 const [articles, setArticles] = useState([])

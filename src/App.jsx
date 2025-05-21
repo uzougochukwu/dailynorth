@@ -6,7 +6,6 @@ import { Routes, Route } from "react-router-dom"
 
 function App() {
 
-
   return (
     <div>
       <h1>dailynorth</h1>

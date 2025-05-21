@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import fetchSpecificArticle from '../GetSpecificArticleApi'
+import {fetchSpecificArticle} from '../API'
 import { useParams } from 'react-router-dom'
 
 
