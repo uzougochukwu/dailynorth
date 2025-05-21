@@ -6,7 +6,7 @@ function fetchSpecificArticle(articleID) {
 
     console.log(response.data.article.title)
 
-    return response.data.article.body
+    return response.data.article
 })
 
 }
