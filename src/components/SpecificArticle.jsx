@@ -10,7 +10,6 @@ const parameter = useParams()
 const [particularArticle, setParticularArticle] = useState([])
 const [isLoading, setIsLoading] = useState(true)
 
-console.log(particularArticle);
 
 useEffect(() => {
     fetchSpecificArticle(parameter.article_id)

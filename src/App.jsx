@@ -3,6 +3,7 @@ import './App.css'
 import AllArticles from './components/AllArticles'
 import SpecificArticle from './components/SpecificArticle'
 import { Routes, Route } from "react-router-dom"
+import SpecificArticleComments from './components/SpecificArticleComments'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
 <Routes>
 <Route path="/" element ={<AllArticles/>}/>
 <Route path="/articles/:article_id" element={<SpecificArticle/>}/>
+<Route path="/articles/:article_id/comments" element={<SpecificArticleComments/>}/>
 </Routes>
   </div>
   )

@@ -12,13 +12,19 @@ function fetchSpecificArticle(articleID) {
     return axios.get(`https://news-api-h2gt.onrender.com/api/articles/${articleID}`)
 .then((response) => {
 
-    console.log(response.data.article.title)
 
     return response.data.article
 })
 
 }
 
-export {fetchSpecificArticle}
+function fetchSpecificArticleComments(articleID) {
+    return axios.get(`https://news-api-h2gt.onrender.com/api/articles/${articleID}/comments`)
+    .then((response) => {
+        console.log(response.data.comment.rows)
+        return response.data.comment.rows
+    })
+}
 
-// module.exports(fetchAllArticles, fetchSpecificArticle)
+export {fetchSpecificArticle, fetchSpecificArticleComments}
+
