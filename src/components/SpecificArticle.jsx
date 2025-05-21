@@ -8,16 +8,23 @@ const parameter = useParams()
 
 
 const [particularArticle, setParticularArticle] = useState([])
+const [isLoading, setIsLoading] = useState(true)
+
 console.log(particularArticle);
+
 useEffect(() => {
     fetchSpecificArticle(parameter.article_id)
     .then((individualArticle) => {
-      
-        // console.log(individualArticle.article.title);
         setParticularArticle(individualArticle)
+        setIsLoading(false)
     })
     .catch(console.log)
 }, [])
+
+
+if (isLoading) {
+  return <p>Loading...</p>
+}
 
   return (
     <div>
