@@ -28,7 +28,13 @@ if (isLoading) {
 
   return (
     <div>
-        <p>Body of article ID {particularArticle.article_id}: {particularArticle.body}</p></div>
+      <p>Title: {particularArticle.title}</p>
+      <p>Author: {particularArticle.author}</p>
+      <p>Topic: {particularArticle.topic}</p>
+      <p>Number of comments: {particularArticle.count}</p>
+      <img src={particularArticle.article_img_url}></img>
+        <p>{particularArticle.body}</p>
+        </div>
   )
 }
 
