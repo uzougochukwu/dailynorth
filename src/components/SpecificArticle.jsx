@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {fetchSpecificArticle} from '../API'
 import { useParams } from 'react-router-dom'
 import SpecificArticleComments from './SpecificArticleComments'
-
+import AddOneVote from './AddOneVote'
 
 function SpecificArticle() {
 const parameter = useParams()
@@ -34,6 +34,7 @@ if (isLoading) {
       <p>Number of comments: {particularArticle.count}</p>
       <img src={particularArticle.article_img_url}></img>
         <p>{particularArticle.body}</p>
+        {<AddOneVote/>}
         {<SpecificArticleComments/>}
         </div>
   )
