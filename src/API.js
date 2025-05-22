@@ -1,5 +1,6 @@
 import axios from "axios"
 
+
 export default function fetchAllArticles() {
 return axios.get("https://news-api-h2gt.onrender.com/api/articles")
 .then((response) => {
@@ -21,10 +22,19 @@ function fetchSpecificArticle(articleID) {
 function fetchSpecificArticleComments(articleID) {
     return axios.get(`https://news-api-h2gt.onrender.com/api/articles/${articleID}/comments`)
     .then((response) => {
-        console.log(response.data.comment.rows)
+
         return response.data.comment.rows
     })
 }
 
-export {fetchSpecificArticle, fetchSpecificArticleComments}
+function voteForArticle(articleID){
+    return axios.patch(`https://news-api-h2gt.onrender.com/api/articles/${articleID}`, {inc_votes:1})
+    .then((response) => {
+
+        return response.data.article.votes        
+    })
+}
+
+
+export {fetchSpecificArticle, fetchSpecificArticleComments, voteForArticle}
 
