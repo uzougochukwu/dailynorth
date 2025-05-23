@@ -26,8 +26,6 @@ if (isLoading) {
         
         return <p key={article.article_id}> {article.title} </p>
     })}</div>
-
-
   )
 }
 

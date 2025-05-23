@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import SpecificArticleComments from './SpecificArticleComments'
 import AddOneVote from './AddOneVote'
 
+
 function SpecificArticle() {
 const parameter = useParams()
 
@@ -28,12 +29,15 @@ if (isLoading) {
 
   return (
     <div>
+        <a href="/">
+        <button>Back to Homepage</button>
+      </a>       
       <p>Title: {particularArticle.title}</p>
       <p>Author: {particularArticle.author}</p>
       <p>Topic: {particularArticle.topic}</p>
       <p>Number of comments: {particularArticle.count}</p>
       <img src={particularArticle.article_img_url}></img>
-        <p>{particularArticle.body}</p>
+        <p>{particularArticle.body}</p>       
         {<AddOneVote/>}
         {<SpecificArticleComments/>}
         </div>
