@@ -35,6 +35,15 @@ function voteForArticle(articleID){
     })
 }
 
+function commentOnArticle(articleID) {
+    return axios.post(`https://news-api-h2gt.onrender.com/api/articles/${articleID}`, {username: commentUsername,
+     body: commentBody })
+     .then((response) => {
 
-export {fetchSpecificArticle, fetchSpecificArticleComments, voteForArticle}
+        return response.data
+     })
+}
+
+
+export {fetchSpecificArticle, fetchSpecificArticleComments, voteForArticle, commentOnArticle}
 
