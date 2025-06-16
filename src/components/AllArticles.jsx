@@ -23,8 +23,13 @@ if (isLoading) {
 
 
     <div>A List of all our articles: {articles.map((article) => {
+
+      const link = "/articles/" + article.article_id
         
-        return <p key={article.article_id}> {article.title} </p>
+        return <p key={article.article_id}> {article.title} <a href={link}>
+        <button>Go to article</button>
+      </a>    </p>
+        
     })}</div>
   )
 }
