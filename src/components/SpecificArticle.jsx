@@ -3,6 +3,7 @@ import {fetchSpecificArticle} from '../API'
 import { useParams } from 'react-router-dom'
 import SpecificArticleComments from './SpecificArticleComments'
 import AddOneVote from './AddOneVote'
+import AddComment from './AddComment'
 
 
 function SpecificArticle() {
@@ -39,7 +40,8 @@ if (isLoading) {
       <img src={particularArticle.article_img_url}></img>
         <p>{particularArticle.body}</p>       
         {<AddOneVote/>}
-        {<SpecificArticleComments/>}
+        {<SpecificArticleComments/>} 
+        {<AddComment/>}
         </div>
   )
 }

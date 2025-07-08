@@ -39,6 +39,7 @@ function voteForArticle(articleID) {
 }
 
 function commentOnArticle(articleID) {
+ 
   return axios
     .post(`https://news-api-h2gt.onrender.com/api/articles/${articleID}`, {
       username: commentUsername,
@@ -47,6 +48,7 @@ function commentOnArticle(articleID) {
     .then((response) => {
       return response.data;
     });
+    
 }
 
 export {
