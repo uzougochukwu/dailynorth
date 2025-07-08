@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { commentOnArticle } from "../API";
-import axios from "axios"
+import axios from "axios";
 
 function AddComment() {
   const parameter = useParams();
@@ -13,29 +13,40 @@ function AddComment() {
   const [error, setError] = useState(null);
 
   const sendComment = () => {
-console.log("it sent");
-
     axios
-    .post(`https://news-api-h2gt.onrender.com/api/articles/${parameter.article_id}/comments`, {
-      username: "grumpy19",
-      body: "hello",
-    })
-    .then((response) => {
-        console.log(response.data);
-        
-      return response.data;
-    }); };
-
-//   const onChangeHandlerUsername = (e) => {
-//     setUsername(e.target.value);
-//     console.log(commentUsername);
-    
-//   };
+      .post(
+        `https://news-api-h2gt.onrender.com/api/articles/${parameter.article_id}/comments`,
+        {
+          username: commentUsername,
+          body: commentBody,
+        }
+      )
+      .then((response) => {
+        return response.data;
+      });
+  };
 
   return (
     <div>
-      <button onClick={sendComment}>Send Comment</button>
-     
+      <button onClick={sendComment}>Add Comment</button>
+
+      <p>
+        Username
+        <input
+          type="text"
+          value={commentUsername}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+      </p>
+
+      <p>
+        Comment Body
+        <input
+          type="text"
+          value={commentBody}
+          onChange={(e) => setBody(e.target.value)}
+        />
+      </p>
     </div>
   );
 }

@@ -9,7 +9,6 @@ function SpecificArticleComments() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log("below useEffect");
 
     fetchSpecificArticleComments(parameter.article_id)
       .then((articleComments) => {
