@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchSpecificArticleComments } from "../API";
 import { useParams } from "react-router-dom";
+import DeleteComment from "./DeleteComment";
 
 function SpecificArticleComments() {
   const parameter = useParams();
@@ -9,7 +10,6 @@ function SpecificArticleComments() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-
     fetchSpecificArticleComments(parameter.article_id)
       .then((articleComments) => {
         setComments(articleComments);
@@ -26,6 +26,7 @@ function SpecificArticleComments() {
           <p key={comment.comment_id}>
             {" "}
             {comment.author}: {comment.body}{" "}
+            {<DeleteComment commentID={comment.comment_id} />}
           </p>
         );
       })}
