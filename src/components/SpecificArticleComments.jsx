@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchSpecificArticleComments } from "../API";
 import { useParams } from "react-router-dom";
 import DeleteComment from "./DeleteComment";
+import axios from "axios";
 
 function SpecificArticleComments() {
   const parameter = useParams();
@@ -18,14 +19,10 @@ function SpecificArticleComments() {
       .catch(console.log);
   }, []);
 
-  const removeComment2 = () => {
-    console.log("in remove comment");
-    console.log(props);
-
+  const removeComment2 = (comment_id) => {
+ 
     axios
-      .delete(
-        `https://news-api-h2gt.onrender.com/api/comments/${parameter.comment_id}`
-      )
+      .delete(`https://news-api-h2gt.onrender.com/api/comments/${comment_id}`)
       .then((response) => {
         return response.data;
       });
@@ -43,11 +40,9 @@ function SpecificArticleComments() {
           <p key={comment.comment_id}>
             {" "}
             {comment.author}: {comment.body} Comment ID: {comment.comment_id}
-            <a href={link}>
-              <button onClick={removeComment2}>
-                Go to delete comment section
-              </button>
-            </a>
+            <button value ={comment.comment_id} onClick={() => removeComment2(comment.comment_id)}>
+              Delete comment
+            </button>
           </p>
         );
       })}
