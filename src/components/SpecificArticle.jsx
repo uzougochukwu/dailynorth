@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import SpecificArticleComments from './SpecificArticleComments'
 import AddOneVote from './AddOneVote'
 import AddComment from './AddComment'
+import DeleteComment from './DeleteComment'
 
 
 function SpecificArticle() {
@@ -42,6 +43,7 @@ if (isLoading) {
         {<AddOneVote/>}
         {<SpecificArticleComments/>} 
         {<AddComment/>}
+        
         </div>
   )
 }

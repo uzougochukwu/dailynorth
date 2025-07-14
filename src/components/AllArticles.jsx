@@ -21,7 +21,6 @@ if (isLoading) {
 
   return (
 
-
     <div>A List of all our articles: {articles.map((article) => {
 
       const link = "/articles/" + article.article_id

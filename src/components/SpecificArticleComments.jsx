@@ -18,15 +18,36 @@ function SpecificArticleComments() {
       .catch(console.log);
   }, []);
 
+  const removeComment2 = () => {
+    console.log("in remove comment");
+    console.log(props);
+
+    axios
+      .delete(
+        `https://news-api-h2gt.onrender.com/api/comments/${parameter.comment_id}`
+      )
+      .then((response) => {
+        return response.data;
+      });
+  };
+
   return (
     <div>
       Comments for this article{" "}
       {comments.map((comment) => {
+        const link =
+          "https://news-api-h2gt.onrender.com/api/comments/" +
+          comment.comment_id;
+
         return (
           <p key={comment.comment_id}>
             {" "}
-            {comment.author}: {comment.body}{" "}
-            {<DeleteComment commentID={comment.comment_id} />}
+            {comment.author}: {comment.body} Comment ID: {comment.comment_id}
+            <a href={link}>
+              <button onClick={removeComment2}>
+                Go to delete comment section
+              </button>
+            </a>
           </p>
         );
       })}
