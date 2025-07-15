@@ -39,7 +39,7 @@ function SpecificArticleComments() {
         return (
           <p key={comment.comment_id}>
             {" "}
-            {comment.author}: {comment.body} Comment ID: {comment.comment_id}
+            {comment.author}: {comment.body} 
             <button value ={comment.comment_id} onClick={() => removeComment2(comment.comment_id)}>
               Delete comment
             </button>
