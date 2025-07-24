@@ -2,8 +2,9 @@ import axios from "axios";
 
 export default function fetchAllArticles() {
   return axios
-    .get("https://news-api-h2gt.onrender.com/api/articles")
+    .get(`https://news-api-h2gt.onrender.com/api/articles`)
     .then((response) => {
+      
       return response.data;
     });
 }
@@ -22,7 +23,7 @@ function fetchSpecificArticleComments(articleID) {
       `https://news-api-h2gt.onrender.com/api/articles/${articleID}/comments`
     )
     .then((response) => {
-      console.log(response);
+      //console.log(response);
 
       return response.data.comment;
     });
@@ -53,9 +54,18 @@ function fetchAllTopics() {
   return axios
     .get("https://news-api-h2gt.onrender.com/api/topics")
     .then((response) => {
-      console.log(response);
+      //console.log(response);
 
       return response.data.topicsData;
+    });
+}
+
+function fetchAllArticlesOfTopic(slug) {
+  return axios
+    .get(`https://news-api-h2gt.onrender.com/api/articles?topic=${slug}`)
+    .then((response) => {
+      
+      return response.data;
     });
 }
 
@@ -65,4 +75,5 @@ export {
   voteForArticle,
   commentOnArticle,
   fetchAllTopics,
+  fetchAllArticlesOfTopic
 };

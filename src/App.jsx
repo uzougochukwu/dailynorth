@@ -12,6 +12,7 @@ function App() {
       <h1>dailynorth</h1>
       <Routes>
         <Route path="/" element={<AllArticles />} />
+        <Route path="/articles" element={<AllArticles />} />
         <Route path ="/topics" element={<AllTopics/>} />
         <Route path="/articles/:article_id" element={<SpecificArticle />} />
         <Route path="/comments/:comment_id" element={<DeleteComment/>} />
