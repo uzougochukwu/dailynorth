@@ -39,7 +39,6 @@ function voteForArticle(articleID) {
 }
 
 function commentOnArticle(articleID) {
- 
   return axios
     .post(`https://news-api-h2gt.onrender.com/api/articles/${articleID}`, {
       username: commentUsername,
@@ -48,7 +47,16 @@ function commentOnArticle(articleID) {
     .then((response) => {
       return response.data;
     });
-    
+}
+
+function fetchAllTopics() {
+  return axios
+    .get("https://news-api-h2gt.onrender.com/api/topics")
+    .then((response) => {
+      console.log(response);
+
+      return response.data.topicsData;
+    });
 }
 
 export {
@@ -56,4 +64,5 @@ export {
   fetchSpecificArticleComments,
   voteForArticle,
   commentOnArticle,
+  fetchAllTopics,
 };

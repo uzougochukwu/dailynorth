@@ -4,6 +4,7 @@ import AllArticles from "./components/AllArticles";
 import SpecificArticle from "./components/SpecificArticle";
 import { Routes, Route } from "react-router-dom";
 import DeleteComment from "./components/DeleteComment";
+import AllTopics from "./components/AllTopics";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <h1>dailynorth</h1>
       <Routes>
         <Route path="/" element={<AllArticles />} />
+        <Route path ="/topics" element={<AllTopics/>} />
         <Route path="/articles/:article_id" element={<SpecificArticle />} />
         <Route path="/comments/:comment_id" element={<DeleteComment/>} />
       </Routes>

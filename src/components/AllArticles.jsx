@@ -20,14 +20,18 @@ if (isLoading) {
 }
 
   return (
+    
 
-    <div>A List of all our articles: {articles.map((article) => {
+    <div>
+       
+      A List of all our articles: {articles.map((article) => {
 
       const link = "/articles/" + article.article_id
+      const link2 = "/topics"
         
         return <p key={article.article_id}> {article.title} <a href={link}>
         <button>Go to article</button>
-      </a>    </p>
+      </a> <a href={link2}><button> Go to all topics</button></a>   </p> 
         
     })}</div>
   )
