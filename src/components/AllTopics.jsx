@@ -40,7 +40,7 @@ function AllTopics() {
       <br></br>A List of all our topics:{" "}
       {topics.map((topic) => {
         const link = "/articles?topic=" + topic.slug;
-        //console.log(link);
+        //console.log(topics);
         const specificTopic = topic.slug;
 
         return (

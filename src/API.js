@@ -4,11 +4,15 @@ export default function fetchAllArticles(params) {
   return axios
     .get(`https://news-api-h2gt.onrender.com/api/articles`, {
       params:{
+        sort_by: params.sort,
         topic: params.topic
-      }
+        
+      },
     })
     .then((response) => {
-      console.log(response);
+      
+      
+      //console.log(response, params);
       
       return response.data;
     });

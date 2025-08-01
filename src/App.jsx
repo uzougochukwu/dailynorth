@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import DeleteComment from "./components/DeleteComment";
 import AllTopics from "./components/AllTopics";
 import AllArticlesTopic from "./components/AllArticlesTopic";
+import SortOptions from "./components/SortOptions";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<AllArticles />} />
         <Route path="/articles" element={<AllArticles />} />
         <Route path ="/topics" element={<AllTopics/>} />
+        <Route path ="/sort" element={<SortOptions/>} />
         <Route path="/articles?topic=" element={<AllArticlesTopic/>} />
         <Route path="/articles/:article_id" element={<SpecificArticle />} />
         <Route path="/comments/:comment_id" element={<DeleteComment/>} />
