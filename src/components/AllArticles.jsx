@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import fetchAllArticles from '../API'
+import { useSearchParams } from 'react-router-dom'
 
 function AllArticles() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const topic = searchParams.get("topic");
+
 const [articles, setArticles] = useState([])
 const [isLoading, setIsLoading] = useState(true)
 
 useEffect(() => {
-    fetchAllArticles()
+    fetchAllArticles({topic})
     .then((allArticlesFromApi) => {
         
         setArticles(allArticlesFromApi)
         setIsLoading(false)
     })
     .catch(console.log)
-}, [])
+}, [searchParams])
 
 if (isLoading) {
   return <p>Loading...</p>
