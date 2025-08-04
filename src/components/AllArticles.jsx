@@ -5,7 +5,7 @@ import { useSearchParams } from 'react-router-dom'
 function AllArticles() {
   const [searchParams, setSearchParams] = useSearchParams();
   const topic = searchParams.get("topic");
-  const sort = searchParams.get("sort_by") || "created_at";
+  const sort = searchParams.get("sort_by");
   //const sort = searchParams.get("sort") 
 
 
@@ -26,6 +26,8 @@ if (isLoading) {
   return <p>Loading...</p>
 }
 
+if (topic == "coding" || topic == "football" || topic == "cooking" || topic == undefined ) {
+
   return (
     
 
@@ -44,6 +46,9 @@ if (isLoading) {
         
     })}</div>
   )
+} else {
+  return (<div>That topic does not exist</div>)
+}
 }
 
 export default AllArticles

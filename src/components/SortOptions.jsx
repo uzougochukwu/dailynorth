@@ -6,7 +6,6 @@ const link_article_id = "/articles?sort_by=article_id"
 const link_votes = "/articles?sort_by=votes";
 const link_title = "/articles?sort_by=title";
 const link_author= "/articles?sort_by=author";
-// console.log(link_votes);
 
 
   return (

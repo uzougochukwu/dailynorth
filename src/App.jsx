@@ -7,6 +7,7 @@ import DeleteComment from "./components/DeleteComment";
 import AllTopics from "./components/AllTopics";
 import AllArticlesTopic from "./components/AllArticlesTopic";
 import SortOptions from "./components/SortOptions";
+import WrongPath from "./components/WrongPath";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/articles?topic=" element={<AllArticlesTopic/>} />
         <Route path="/articles/:article_id" element={<SpecificArticle />} />
         <Route path="/comments/:comment_id" element={<DeleteComment/>} />
+        <Route path="/*" element={<WrongPath/>} />
       </Routes>
     </div>
   );

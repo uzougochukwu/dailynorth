@@ -23,13 +23,18 @@ function AddComment() {
       )
       .then((response) => {
         return response.data;
-      });
+      })
+      .catch(setError(true),
+      console.log("no comment added"));
   };
+
+  if (error){
+    return (<div> Cannot add a comment</div>)
+  } else{
 
   return (
     <div>
       <button onClick={sendComment}>Add Comment</button>
-
       <p>
         Username
         <input
@@ -38,7 +43,6 @@ function AddComment() {
           onChange={(e) => setUsername(e.target.value)}
         />
       </p>
-
       <p>
         Comment Body
         <input
@@ -49,6 +53,7 @@ function AddComment() {
       </p>
     </div>
   );
+}
 }
 
 export default AddComment;
