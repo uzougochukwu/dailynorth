@@ -1,5 +1,5 @@
 import axios from "axios";
-const cors = require('cors');
+
 
 export default function fetchAllArticles(params) {
   return axios
